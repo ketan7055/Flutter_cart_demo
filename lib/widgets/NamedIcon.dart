@@ -18,9 +18,10 @@ class NamedIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
+
       onTap: onTap,
       child: Container(
-        margin: const EdgeInsets.only(top: 15),
+        margin: const EdgeInsets.only(top: 0),
         width: 72,
         padding: const EdgeInsets.symmetric(horizontal: 8),
         child: Stack(
@@ -30,11 +31,10 @@ class NamedIcon extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Icon(iconData),
-                Text(text, overflow: TextOverflow.ellipsis),
               ],
             ),
             Positioned(
-              top: 0,
+              top: 5,
               right: 0,
               child: Container(
                 padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),

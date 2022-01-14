@@ -19,7 +19,7 @@ class _CartScreenState extends State<CartScreen> {
       backgroundColor:  Color.fromRGBO(247, 246, 242, 1),
 
       appBar: AppBar(
-        title: Text("Cart Item"),
+        title: Text("Your Cart"),
         centerTitle: true,
         leading: IconButton(
           icon: Icon(
@@ -36,19 +36,18 @@ class _CartScreenState extends State<CartScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-          Icon(
-
+          const Icon(
             Icons.shopping_cart,
             size: 70,
           ),
 
-              Text("Your cart is empty."
+              const Text("Your cart is empty."
               , style: TextStyle(fontSize: 20),),
-              SizedBox(height: 10,),
+              const SizedBox(height: 10,),
               ElevatedButton(
                 onPressed:(){
                     Navigator.pop(context);
-              },child: Text("Start Shoping")),
+              },child: const Text("Start Shopping")),
 
             ],
           ),

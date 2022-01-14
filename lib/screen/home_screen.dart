@@ -31,7 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   Tab(text: "Dessert",),
                 ],
               ),
-              title: const Text("Item List"),
+              title: const Text("Meal List"),
               actions: [
                 NamedIcon(
                   text: '',
