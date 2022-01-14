@@ -22,6 +22,7 @@ User can add meals in cart by selecting number of quantaties and after that it w
 ![Screenshot_1642176708](https://user-images.githubusercontent.com/33648294/149549082-1169ebc9-41c6-4566-8cd8-dcd49cbd26d1.png )
 ![Screenshot_1642176714](https://user-images.githubusercontent.com/33648294/149549092-4bc6accd-7dec-41b0-98cf-96e9d06ebd6d.png )
 ![Screenshot_1642177569](https://user-images.githubusercontent.com/33648294/149550013-a6ce8ea9-8d35-478c-bdaf-6c1563cdd010.png )
+![Screenshot_1642176733](https://user-images.githubusercontent.com/33648294/149563020-8ac4e620-1c36-4c83-8ce0-ca29f3025f35.png)
 
 
 
