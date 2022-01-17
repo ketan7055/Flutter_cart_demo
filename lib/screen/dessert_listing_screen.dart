@@ -1,7 +1,6 @@
-import 'package:cart/data/ListData.dart';
+import 'package:cart/data/list_data.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import '../widgets/custom_item_view.dart';
 
 class DessertListingScreen extends StatefulWidget {
@@ -22,20 +21,20 @@ class _DessertListingScreenState extends State<DessertListingScreen> {
             },
             scrollDirection: Axis.vertical,
             shrinkWrap: true,
-            itemCount: Provider.of<ListData>(context).getDisertList().length,
+            itemCount: Provider.of<ListData>(context).getDessertList().length,
             itemBuilder: (BuildContext context, int index) {
               return CutomItemView(
                 name: Provider.of<ListData>(context)
-                    .getDisertList()[index]
+                    .getDessertList()[index]
                     .name,
                 image: Provider.of<ListData>(context)
-                    .getDisertList()[index]
+                    .getDessertList()[index]
                     .image,
                 count: Provider.of<ListData>(context)
-                    .getDisertList()[index]
+                    .getDessertList()[index]
                     .count,
                 price: Provider.of<ListData>(context)
-                    .getDisertList()[index]
+                    .getDessertList()[index]
                     .price,
                 onAdd: () {
                   setState(
@@ -43,9 +42,7 @@ class _DessertListingScreenState extends State<DessertListingScreen> {
                       Provider.of<ListData>(context, listen: false)
                           .addItem(Provider.of<ListData>(context,
                           listen: false)
-                          .getDisertList()[index]);
-
-
+                          .getDessertList()[index]);
 
                     },
                   );
@@ -55,7 +52,7 @@ class _DessertListingScreenState extends State<DessertListingScreen> {
                     Provider.of<ListData>(context, listen: false)
                         .remove(Provider.of<ListData>(context,
                         listen: false)
-                        .getDisertList()[index]);
+                        .getDessertList()[index]);
                   });
                 },
               );

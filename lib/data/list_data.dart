@@ -1,125 +1,130 @@
 import 'dart:convert';
 
-import 'package:cart/data/ListItem.dart';
+import 'package:cart/data/item_data.dart';
 import 'package:flutter/cupertino.dart';
 
 class ListData extends ChangeNotifier {
-  List<ListItem> itmes = [
-    ListItem(
+
+
+  /**
+   * static meal list.
+   */
+  List<ItemData> items = [
+    ItemData(
         ID: "306",
         name: 'Lemongrass Chicken (serves 2)',
         image: "images/dinner1.jpg",
         count: 0,
-        price: 50,
+        price: 15,
         type: CATEGORY_TYPE.MAIN_COURSE),
-    ListItem(
+    ItemData(
         ID: "307",
         name: 'Flank Steak  with Sherried Mushroom Sauce Dinner for Two',
         image: "images/dinner2.jpg",
         count: 0,
-        price: 150,
+        price: 20,
         type: CATEGORY_TYPE.MAIN_COURSE),
-    ListItem(
+    ItemData(
         ID: "308",
         name: 'Southwest Chili Dinner for Two',
         image: "images/dinner3.jpg",
         count: 0,
-        price: 200,
+        price: 23,
         type: CATEGORY_TYPE.MAIN_COURSE),
-    ListItem(
+    ItemData(
         ID: "309",
         name: 'Quinoa Chocolate Bites (serves 5)',
         image: "images/dinner4.png",
         count: 0,
-        price: 700,
+        price: 7,
         type: CATEGORY_TYPE.MAIN_COURSE),
 
-    ListItem(
+    ItemData(
         ID: "307",
         name: 'Chocolate Shake',
         image: "images/disert2.jpg",
         count: 0,
-        price: 150,
-        type: CATEGORY_TYPE.DISERT),
-    ListItem(
+        price: 13,
+        type: CATEGORY_TYPE.DESSERT),
+    ItemData(
         ID: "308",
         name: 'Pery-pery',
         image: "images/disert3.jpg",
         count: 0,
-        price: 200,
-        type: CATEGORY_TYPE.DISERT),
-    ListItem(
+        price: 20,
+        type: CATEGORY_TYPE.DESSERT),
+    ItemData(
         ID: "309",
         name: 'Baked cake oatmeal pie oat',
         image: "images/disert4.jpg",
         count: 0,
-        price: 700,
-        type: CATEGORY_TYPE.DISERT),
-    ListItem(
+        price: 25,
+        type: CATEGORY_TYPE.DESSERT),
+    ItemData(
         ID: "309",
         name: 'Chocolate cake',
         image: "images/disert5.jpg",
         count: 0,
-        price: 700,
-        type: CATEGORY_TYPE.DISERT),
-    ListItem(
+        price: 12,
+        type: CATEGORY_TYPE.DESSERT),
+    ItemData(
         ID: "309",
         name: 'Homemade toffee chocolate cake vanilla frosting',
         image: "images/disert6.jpg",
         count: 0,
-        price: 85,
-        type: CATEGORY_TYPE.DISERT),
+        price: 10,
+        type: CATEGORY_TYPE.DESSERT),
   ];
 
-  List<ListItem> disertList = [];
-  List<ListItem> mainCourseList = [];
-  List<ListItem> cartList = [];
+  List<ItemData> dessertList = [];
+  List<ItemData> mainCourseList = [];
+  List<ItemData> cartList = [];
   int cartItemCount = 0;
   double subTotal = 0.0;
 
-  List<ListItem> getMainCourseList() {
+  List<ItemData> getMainCourseList() {
     mainCourseList.clear();
-    for (int i = 0; i < itmes.length; i++) {
-      print("itmes[i].type main: ${itmes[i].type}");
-      if (itmes[i].type == CATEGORY_TYPE.MAIN_COURSE) {
-        mainCourseList.add(itmes[i]);
+    for (int i = 0; i < items.length; i++) {
+      print("itmes[i].type main: ${items[i].type}");
+      if (items[i].type == CATEGORY_TYPE.MAIN_COURSE) {
+        mainCourseList.add(items[i]);
       }
     }
     print("mainCourseListlength : ${mainCourseList.length}");
     return mainCourseList;
   }
 
-  List<ListItem> getDisertList() {
-    disertList.clear();
-    for (int i = 0; i < itmes.length; i++) {
-      if (itmes[i].type == CATEGORY_TYPE.DISERT) {
-        disertList.add(itmes[i]);
+  List<ItemData> getDessertList() {
+    dessertList.clear();
+    for (int i = 0; i < items.length; i++) {
+      if (items[i].type == CATEGORY_TYPE.DESSERT) {
+        dessertList.add(items[i]);
       }
     }
-    return disertList;
+    return dessertList;
   }
 
-  List<ListItem> getCartList() {
+  List<ItemData> getCartList() {
     cartList.clear();
-    for (int i = 0; i < itmes.length; i++) {
-      print("itmes[i].count:: ${itmes[i].count}");
-      if (itmes[i].count > 0) {
-        cartList.add(itmes[i]);
+    for (int i = 0; i < items.length; i++) {
+      print("itmes[i].count:: ${items[i].count}");
+      if (items[i].count > 0) {
+        cartList.add(items[i]);
       }
     }
-    if (cartList.length > 0) {
+    if (cartList.isNotEmpty) {
       calculateSubTotal(cartList);
     }
     return cartList;
   }
 
-  void addItem(ListItem data) {
+  void addItem(ItemData data) {
     data.count = data.count + 1;
     calculateSubTotal(cartList);
     notifyListeners();
   }
 
-  void remove(ListItem data) {
+  void remove(ItemData data) {
     if (data.count > 0) {
       data.count = data.count - 1;
     }
@@ -127,17 +132,16 @@ class ListData extends ChangeNotifier {
     notifyListeners();
   }
 
-  void calculateSubTotal(List<ListItem> cartList) {
+  void calculateSubTotal(List<ItemData> cartList) {
     subTotal = 0.0;
     cartItemCount = 0;
-    print("cartList.length: ${itmes.length}");
-    for (int i = 0; i < itmes.length - 1; i++) {
-      if(itmes[i].count > 0) {
+    print("cartList.length: ${items.length}");
+    for (int i = 0; i < items.length; i++) {
+      if(items[i].count > 0) {
         cartItemCount = cartItemCount + 1;
-        subTotal = subTotal + (itmes[i].price * itmes[i].count).toDouble();
+        subTotal = subTotal + (items[i].price * items[i].count).toDouble();
       }
     }
-    notifyListeners();
 
   }
 }

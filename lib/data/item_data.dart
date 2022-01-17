@@ -1,4 +1,4 @@
-class ListItem {
+class ItemData {
   String name;
   String ID;
   String image;
@@ -6,8 +6,7 @@ class ListItem {
   int price;
   CATEGORY_TYPE type;
 
-
-  ListItem(
+  ItemData(
       {required this.name,
       required this.ID,
       required this.image,
@@ -15,11 +14,12 @@ class ListItem {
       required this.price,
         required this.type
       });
-
-
-
 }
+
+/**
+ * enum class for type.
+ */
 enum CATEGORY_TYPE {
   MAIN_COURSE,
-  DISERT
+  DESSERT
 }

@@ -1,9 +1,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import '../widgets/custom_item_view.dart';
-import '../data/ListData.dart';
+import '../data/list_data.dart';
+
 
 class CartScreen extends StatefulWidget {
   const CartScreen({Key? key}) : super(key: key);
@@ -16,13 +16,13 @@ class _CartScreenState extends State<CartScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor:  Color.fromRGBO(247, 246, 242, 1),
+      backgroundColor:  const Color.fromRGBO(247, 246, 242, 1),
 
       appBar: AppBar(
-        title: Text("Your Cart"),
+        title: const Text("Your Cart"),
         centerTitle: true,
         leading: IconButton(
-          icon: Icon(
+          icon: const Icon(
             Icons.arrow_back,
             color: Colors.white,
           ),
@@ -31,35 +31,33 @@ class _CartScreenState extends State<CartScreen> {
           },
         ),
       ),
-      body: Provider.of<ListData>(context).getCartList().isEmpty ? Container(
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-          const Icon(
-            Icons.shopping_cart,
-            size: 70,
-          ),
+      body: Provider.of<ListData>(context).getCartList().isEmpty ? Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+        const Icon(
+          Icons.shopping_cart,
+          size: 70,
+        ),
 
-              const Text("Your cart is empty."
-              , style: TextStyle(fontSize: 20),),
-              const SizedBox(height: 10,),
-              ElevatedButton(
-                onPressed:(){
-                    Navigator.pop(context);
-              },child: const Text("Start Shopping")),
+            const Text("Your cart is empty."
+            , style: TextStyle(fontSize: 20),),
+            const SizedBox(height: 10,),
+            ElevatedButton(
+              onPressed:(){
+                  Navigator.pop(context);
+            },child: const Text("Start Shopping")),
 
-            ],
-          ),
+          ],
         ),
       ) : Column(children: [
         Expanded(
 
           child: Container(
-            padding: EdgeInsets.all(15),
+            padding: const EdgeInsets.all(15),
             child: ListView.separated(
                 separatorBuilder: (BuildContext context, int index) {
-                  return SizedBox(height: 15  );
+                  return const SizedBox(height: 15  );
                 },
                 scrollDirection: Axis.vertical,
                 shrinkWrap: true,
@@ -79,19 +77,11 @@ class _CartScreenState extends State<CartScreen> {
                         .getCartList()[index]
                         .price,
                     onAdd: () {
-                      print("provider clicked");
-
-                      setState(
-                            () {
-                          print(
-                              "${Provider.of<ListData>(context, listen: false).getCartList()[index].count}");
+                      setState(() {
                           Provider.of<ListData>(context, listen: false)
                               .addItem(Provider.of<ListData>(context,
                               listen: false)
                               .getCartList()[index]);
-
-
-
                         },
                       );
                     },
@@ -108,17 +98,17 @@ class _CartScreenState extends State<CartScreen> {
           ),
         ),
         Container(
-          color: Color.fromRGBO(246, 233, 218, 1),
+          color: const Color.fromRGBO(246, 233, 218, 1),
           child: Column(
             children: [
               ListTile(
-
-                trailing: Text(" \$${Provider.of<ListData>(context).subTotal}") ,
-                leading: Text(" Sub Total") ,
+                trailing: Text(" \$${Provider.of<ListData>(context).subTotal.toStringAsFixed(2)}") ,
+                leading: const Text(" Subtotal") ,
               ),
               ElevatedButton(
                 onPressed: (){
-
+                  ScaffoldMessenger.of(context)
+                      .showSnackBar(const SnackBar(content: Text("In Progress.")));
                 }, child: const Text("Place Order"),
               )
             ]

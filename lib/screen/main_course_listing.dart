@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../widgets/custom_item_view.dart';
-import '../data/ListData.dart';
+import '../data/list_data.dart';
 
 class MainCourseListingScreen extends StatefulWidget {
   const MainCourseListingScreen({Key? key}) : super(key: key);
@@ -38,12 +38,7 @@ class _MainCourseListingScreenState extends State<MainCourseListingScreen> {
                     .getMainCourseList()[index]
                     .price,
                 onAdd: () {
-                  print("provider clicked");
-
-                  setState(
-                        () {
-                      print(
-                          "${Provider.of<ListData>(context, listen: false).getMainCourseList()[index].count}");
+                  setState(() {
                       Provider.of<ListData>(context, listen: false)
                           .addItem(Provider.of<ListData>(context,
                           listen: false)
@@ -56,7 +51,7 @@ class _MainCourseListingScreenState extends State<MainCourseListingScreen> {
                     Provider.of<ListData>(context, listen: false)
                         .remove(Provider.of<ListData>(context,
                         listen: false)
-                        .itmes[index]);
+                        .items[index]);
                   });
                 },
               );

@@ -1,7 +1,7 @@
-import 'package:cart/screen/cart__screen.dart';
-import 'package:cart/data/ListData.dart';
+import 'package:cart/screen/cart_screen.dart';
+import 'package:cart/data/list_data.dart';
 import 'package:cart/screen/dessert_listing_screen.dart';
-import 'package:cart/widgets/NamedIcon.dart';
+import 'package:cart/widgets/badge_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -22,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
         length: 2,
         child: Scaffold(
 
-          backgroundColor:  Color.fromRGBO(247, 246, 242, 1),
+          backgroundColor:  const Color.fromRGBO(247, 246, 242, 1),
             appBar: AppBar(
               bottom: const TabBar(
 
@@ -33,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               title: const Text("Meal List"),
               actions: [
-                NamedIcon(
+                BadgeIcon(
                   text: '',
                   iconData: Icons.shopping_cart,
                   notificationCount: Provider.of<ListData>(context).cartItemCount,

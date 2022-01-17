@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 
-
-class NamedIcon extends StatelessWidget {
+/**
+ * Notification badge widgit.
+ */
+class BadgeIcon extends StatelessWidget {
   final IconData iconData;
   final String text;
   final VoidCallback? onTap;
   final int notificationCount;
 
-  const NamedIcon({
+  const BadgeIcon({
     Key? key,
     this.onTap,
     required this.text,
@@ -18,7 +20,6 @@ class NamedIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-
       onTap: onTap,
       child: Container(
         margin: const EdgeInsets.only(top: 0),
