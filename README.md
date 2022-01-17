@@ -12,7 +12,7 @@ This project is for show listing of meals with category-wise (Main course and De
 User can add meals in cart by selecting number of quantity and after that it will show that items in cart section with subtotal price.
 
 ## Dependency used :
-  provider: ^6.0.1 : App State management
+  provider: ^6.0.1 : App State Management
 
 
 ## ScreenShots
