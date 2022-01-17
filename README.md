@@ -17,12 +17,11 @@ User can add meals in cart by selecting number of quantity and after that it wil
 4. \screen: Application screen like: HomeScreen (with 2 tab),  Maincourse Screen, Dessert Screen,Cart Screen.
 5. \widgets: Common widgets like : Row of list item, BadgeIcon.
 
+![Screenshot_1642403051](https://user-images.githubusercontent.com/33648294/149723182-9f10523a-9405-4c86-a265-36ce7995a364.png)
+![Screenshot_1642403078](https://user-images.githubusercontent.com/33648294/149723188-b1312c93-afce-4fa3-8bea-06cac429600b.png)
+![Screenshot_1642403106](https://user-images.githubusercontent.com/33648294/149723197-94709437-9682-43e7-8e7c-bedf5aea6597.png)
+![Screenshot_1642403112](https://user-images.githubusercontent.com/33648294/149723203-bd574632-9ab7-49d0-ab5a-6a72c7ec0be7.png)
 
-![Screenshot_1642176700](https://user-images.githubusercontent.com/33648294/149548056-373ba447-68aa-4325-be52-53d681eb002b.png )
-![Screenshot_1642176708](https://user-images.githubusercontent.com/33648294/149549082-1169ebc9-41c6-4566-8cd8-dcd49cbd26d1.png )
-![Screenshot_1642176714](https://user-images.githubusercontent.com/33648294/149549092-4bc6accd-7dec-41b0-98cf-96e9d06ebd6d.png )
-![Screenshot_1642177569](https://user-images.githubusercontent.com/33648294/149550013-a6ce8ea9-8d35-478c-bdaf-6c1563cdd010.png )
-![Screenshot_1642176733](https://user-images.githubusercontent.com/33648294/149563020-8ac4e620-1c36-4c83-8ce0-ca29f3025f35.png)
 
 
 
