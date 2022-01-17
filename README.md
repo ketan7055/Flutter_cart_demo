@@ -8,7 +8,7 @@ Dart SDK version: 2.16.0-80.1.beta
 
 ## Getting Started
 
-This project is for Show Listing of meals with categorywise (Main-course and Desserts),
+This project is for show listing of meals with category-wise (Main-course and Desserts),
 User can add meals in cart by selecting number of quantity and after that it will show that items in cart section with subtotal price.
 
 1. main.dart : Entry point of application.
