@@ -15,6 +15,7 @@ class CartScreen extends StatefulWidget {
 class _CartScreenState extends State<CartScreen> {
   @override
   Widget build(BuildContext context) {
+    var mList = Provider.of<ListData>(context).getCartList();
     return Scaffold(
       backgroundColor:  const Color.fromRGBO(247, 246, 242, 1),
 
@@ -31,7 +32,7 @@ class _CartScreenState extends State<CartScreen> {
           },
         ),
       ),
-      body: Provider.of<ListData>(context).getCartList().isEmpty ? Center(
+      body: mList.isEmpty ? Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -61,36 +62,28 @@ class _CartScreenState extends State<CartScreen> {
                 },
                 scrollDirection: Axis.vertical,
                 shrinkWrap: true,
-                itemCount: Provider.of<ListData>(context).getCartList().length,
+                itemCount: mList.length,
                 itemBuilder: (BuildContext context, int index) {
                   return CutomItemView(
-                    name: Provider.of<ListData>(context)
-                        .getCartList()[index]
+                    name: mList[index]
                         .name,
-                    image: Provider.of<ListData>(context)
-                        .getCartList()[index]
+                    image: mList[index]
                         .image,
-                    count: Provider.of<ListData>(context)
-                        .getCartList()[index]
+                    count: mList[index]
                         .count,
-                    price: Provider.of<ListData>(context)
-                        .getCartList()[index]
+                    price: mList[index]
                         .price,
                     onAdd: () {
                       setState(() {
                           Provider.of<ListData>(context, listen: false)
-                              .addItem(Provider.of<ListData>(context,
-                              listen: false)
-                              .getCartList()[index]);
+                              .addItem(mList[index]);
                         },
                       );
                     },
                     onRemove: () {
                       setState(() {
                         Provider.of<ListData>(context, listen: false)
-                            .remove(Provider.of<ListData>(context,
-                            listen: false)
-                            .getCartList()[index]);
+                            .remove(mList[index]);
                       });
                     },
                   );

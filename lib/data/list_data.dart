@@ -85,12 +85,10 @@ class ListData extends ChangeNotifier {
   List<ItemData> getMainCourseList() {
     mainCourseList.clear();
     for (int i = 0; i < items.length; i++) {
-      print("itmes[i].type main: ${items[i].type}");
       if (items[i].type == CATEGORY_TYPE.MAIN_COURSE) {
         mainCourseList.add(items[i]);
       }
     }
-    print("mainCourseListlength : ${mainCourseList.length}");
     return mainCourseList;
   }
 
@@ -107,7 +105,6 @@ class ListData extends ChangeNotifier {
   List<ItemData> getCartList() {
     cartList.clear();
     for (int i = 0; i < items.length; i++) {
-      print("itmes[i].count:: ${items[i].count}");
       if (items[i].count > 0) {
         cartList.add(items[i]);
       }
@@ -135,7 +132,6 @@ class ListData extends ChangeNotifier {
   void calculateSubTotal(List<ItemData> cartList) {
     subTotal = 0.0;
     cartItemCount = 0;
-    print("cartList.length: ${items.length}");
     for (int i = 0; i < items.length; i++) {
       if(items[i].count > 0) {
         cartItemCount = cartItemCount + 1;

@@ -14,6 +14,8 @@ class MainCourseListingScreen extends StatefulWidget {
 class _MainCourseListingScreenState extends State<MainCourseListingScreen> {
   @override
   Widget build(BuildContext context) {
+    var mList = Provider.of<ListData>(context)
+        .getMainCourseList();
     return Container(
       margin: EdgeInsets.all(10),
         child: ListView.separated(
@@ -25,33 +27,25 @@ class _MainCourseListingScreenState extends State<MainCourseListingScreen> {
             itemCount: Provider.of<ListData>(context).getMainCourseList().length,
             itemBuilder: (BuildContext context, int index) {
               return CutomItemView(
-                name: Provider.of<ListData>(context)
-                    .getMainCourseList()[index]
+                name:mList[index]
                     .name,
-                image: Provider.of<ListData>(context)
-                    .getMainCourseList()[index]
+                image: mList[index]
                     .image,
-                count: Provider.of<ListData>(context)
-                    .getMainCourseList()[index]
+                count: mList[index]
                     .count,
-                price: Provider.of<ListData>(context)
-                    .getMainCourseList()[index]
+                price: mList[index]
                     .price,
                 onAdd: () {
                   setState(() {
                       Provider.of<ListData>(context, listen: false)
-                          .addItem(Provider.of<ListData>(context,
-                          listen: false)
-                          .getMainCourseList()[index]);
+                          .addItem(mList[index]);
                     },
                   );
                 },
                 onRemove: () {
                   setState(() {
                     Provider.of<ListData>(context, listen: false)
-                        .remove(Provider.of<ListData>(context,
-                        listen: false)
-                        .items[index]);
+                        .remove(mList[index]);
                   });
                 },
               );

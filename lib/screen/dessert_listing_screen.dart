@@ -10,9 +10,12 @@ class DessertListingScreen extends StatefulWidget {
   _DessertListingScreenState createState() => _DessertListingScreenState();
 }
 
+
 class _DessertListingScreenState extends State<DessertListingScreen> {
+
   @override
   Widget build(BuildContext context) {
+    var mList = Provider.of<ListData>(context).getDessertList();
     return Container(
       margin: const EdgeInsets.all(10),
         child: ListView.separated(
@@ -21,38 +24,28 @@ class _DessertListingScreenState extends State<DessertListingScreen> {
             },
             scrollDirection: Axis.vertical,
             shrinkWrap: true,
-            itemCount: Provider.of<ListData>(context).getDessertList().length,
+            itemCount: mList.length,
             itemBuilder: (BuildContext context, int index) {
               return CutomItemView(
-                name: Provider.of<ListData>(context)
-                    .getDessertList()[index]
+                name: mList[index]
                     .name,
-                image: Provider.of<ListData>(context)
-                    .getDessertList()[index]
+                image: mList[index]
                     .image,
-                count: Provider.of<ListData>(context)
-                    .getDessertList()[index]
+                count: mList[index]
                     .count,
-                price: Provider.of<ListData>(context)
-                    .getDessertList()[index]
+                price: mList[index]
                     .price,
                 onAdd: () {
-                  setState(
-                        () {
+                  setState(() {
                       Provider.of<ListData>(context, listen: false)
-                          .addItem(Provider.of<ListData>(context,
-                          listen: false)
-                          .getDessertList()[index]);
-
+                          .addItem(mList[index]);
                     },
                   );
                 },
                 onRemove: () {
                   setState(() {
                     Provider.of<ListData>(context, listen: false)
-                        .remove(Provider.of<ListData>(context,
-                        listen: false)
-                        .getDessertList()[index]);
+                        .remove(mList[index]);
                   });
                 },
               );
