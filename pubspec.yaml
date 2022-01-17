@@ -58,14 +58,14 @@ flutter:
     - images/
     - assets/
     -
-  fonts:
-    - family: Corinthia
-      fonts:
-        - asset: fonts/Corinthia-Regular.ttf
-
-    - family: BebasNeue
-      fonts:
-        - asset: fonts/BebasNeue-Regular.ttf
+#  fonts:
+#    - family: Corinthia
+#      fonts:
+#        - asset: fonts/Corinthia-Regular.ttf
+#
+#    - family: BebasNeue
+#      fonts:
+#        - asset: fonts/BebasNeue-Regular.ttf
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

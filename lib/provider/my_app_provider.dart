@@ -1,4 +1,4 @@
-import 'package:cart/data/list_data.dart';
+import 'package:cart/data/meal_list.dart';
 import 'package:cart/screen/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

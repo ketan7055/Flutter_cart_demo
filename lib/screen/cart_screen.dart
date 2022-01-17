@@ -1,8 +1,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../widgets/custom_item_view.dart';
-import '../data/list_data.dart';
+import '../widgets/meal_custom_item_view.dart';
+import '../data/meal_list.dart';
 
 
 class CartScreen extends StatefulWidget {

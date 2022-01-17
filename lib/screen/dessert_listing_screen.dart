@@ -1,7 +1,7 @@
-import 'package:cart/data/list_data.dart';
+import 'package:cart/data/meal_list.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../widgets/custom_item_view.dart';
+import '../widgets/meal_custom_item_view.dart';
 
 class DessertListingScreen extends StatefulWidget {
   const DessertListingScreen({Key? key}) : super(key: key);

@@ -1,5 +1,5 @@
 import 'package:cart/screen/cart_screen.dart';
-import 'package:cart/data/list_data.dart';
+import 'package:cart/data/meal_list.dart';
 import 'package:cart/screen/dessert_listing_screen.dart';
 import 'package:cart/widgets/badge_icon.dart';
 import 'package:flutter/material.dart';

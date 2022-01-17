@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:cart/data/item_data.dart';
+import 'package:cart/data/meal_data.dart';
 import 'package:flutter/cupertino.dart';
 
 class ListData extends ChangeNotifier {
