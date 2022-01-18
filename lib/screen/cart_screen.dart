@@ -64,7 +64,7 @@ class _CartScreenState extends State<CartScreen> {
                 shrinkWrap: true,
                 itemCount: mList.length,
                 itemBuilder: (BuildContext context, int index) {
-                  return CutomItemView(
+                  return MealCutomItemView(
                     name: mList[index]
                         .name,
                     image: mList[index]

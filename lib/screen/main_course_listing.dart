@@ -17,16 +17,16 @@ class _MainCourseListingScreenState extends State<MainCourseListingScreen> {
     var mList = Provider.of<ListData>(context)
         .getMainCourseList();
     return Container(
-      margin: EdgeInsets.all(10),
+      margin: const EdgeInsets.all(10),
         child: ListView.separated(
             separatorBuilder: (BuildContext context, int index) {
-              return SizedBox(height: 15  );
+              return const SizedBox(height: 15  );
             },
             scrollDirection: Axis.vertical,
             shrinkWrap: true,
             itemCount: Provider.of<ListData>(context).getMainCourseList().length,
             itemBuilder: (BuildContext context, int index) {
-              return CutomItemView(
+              return MealCutomItemView(
                 name:mList[index]
                     .name,
                 image: mList[index]

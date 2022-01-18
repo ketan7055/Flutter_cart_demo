@@ -10,7 +10,6 @@ class DessertListingScreen extends StatefulWidget {
   _DessertListingScreenState createState() => _DessertListingScreenState();
 }
 
-
 class _DessertListingScreenState extends State<DessertListingScreen> {
 
   @override
@@ -26,7 +25,7 @@ class _DessertListingScreenState extends State<DessertListingScreen> {
             shrinkWrap: true,
             itemCount: mList.length,
             itemBuilder: (BuildContext context, int index) {
-              return CutomItemView(
+              return MealCutomItemView(
                 name: mList[index]
                     .name,
                 image: mList[index]
