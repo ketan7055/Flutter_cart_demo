@@ -16,6 +16,8 @@ User can add meals in cart by selecting number of quantity and after that it wil
 
 ## Command to run Test-Cases on terminal :
   flutter test ./lib/widgets/test_widget/widget_testing.dart
+  
+  <a href="tabcorp://?adb_validation_sessionid=b8d14eb1-1545-4b17-a13a-44a48a7f4661/" target="link">
 
 
 ## ScreenShots
@@ -25,6 +27,8 @@ User can add meals in cart by selecting number of quantity and after that it wil
 
 <img src="https://user-images.githubusercontent.com/33648294/149723197-94709437-9682-43e7-8e7c-bedf5aea6597.png" width="200" height="400" />                                                
 <img src="https://user-images.githubusercontent.com/33648294/149723203-bd574632-9ab7-49d0-ab5a-6a72c7ec0be7.png" width="200" height="400" />
+
+
 
 
 
