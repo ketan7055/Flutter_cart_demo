@@ -1,5 +1,6 @@
 import 'package:cart/data/meal_list.dart';
 import 'package:cart/screen/home_screen.dart';
+import 'package:cart/screen/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -15,7 +16,7 @@ class MyAppProvider extends StatelessWidget {
     return ChangeNotifierProvider<ListData>(
       create: (context) => ListData(),
       child: const MaterialApp(
-        home: HomeScreen(),
+        home: LoginScreen(),
       ),
     );
   }

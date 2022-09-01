@@ -13,6 +13,9 @@ User can add meals in cart by selecting number of quantity and after that it wil
 
 ## Dependency used :
   provider: ^6.0.1 : App State Management
+  flutter_windowmanager: ^0.2.0 // for Screenshot revoke
+  flutter_secure_storage: ^5.0.2 // Local storage
+  encrypt: ^5.0.1  // keeping secure user data in local after AES encrytion
 
 ## Command to run Test-Cases on terminal :
   flutter test ./lib/widgets/test_widget/widget_testing.dart
