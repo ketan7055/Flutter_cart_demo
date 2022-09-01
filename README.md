@@ -13,8 +13,11 @@ User can add meals in cart by selecting number of quantity and after that it wil
 
 ## Dependency used :
   provider: ^6.0.1 : App State Management
+
   flutter_windowmanager: ^0.2.0 // for Screenshot revoke
+
   flutter_secure_storage: ^5.0.2 // Local storage
+
   encrypt: ^5.0.1  // keeping secure user data in local after AES encrytion
 
 ## Command to run Test-Cases on terminal :
@@ -24,6 +27,9 @@ User can add meals in cart by selecting number of quantity and after that it wil
 
 
 ## ScreenShots
+![Simulator Screen Shot - iPhone 13 - 2022-09-01 at 18 12 54](https://user-images.githubusercontent.com/33648294/187916537-19aa8639-9797-4ec9-960d-f9c2476c46be.png)
+![Simulator Screen Shot - iPhone 13 - 2022-09-01 at 18 12 58](https://user-images.githubusercontent.com/33648294/187916561-5e1c7564-900a-4d44-aae9-aade85949056.png)
+
 
 <img src="https://user-images.githubusercontent.com/33648294/149723182-9f10523a-9405-4c86-a265-36ce7995a364.png" width="200" height="400" />                                                
 <img src="https://user-images.githubusercontent.com/33648294/149723188-b1312c93-afce-4fa3-8bea-06cac429600b.png" width="200" height="400" />
